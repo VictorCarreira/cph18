@@ -10,6 +10,7 @@
 \usepackage[portuguese, english]{babel}
 \usepackage[round]{natbib}
 \usepackage{hyperref} 
+\usepackage{tcolorbox}
 \usepackage{graphicx} % Required for including images
 \usepackage{graphics}
 \graphicspath{{Imagens/}} % Location of the graphics files
@@ -105,50 +106,54 @@
 
 \begin{frame}
 \frametitle{Introduction}
-
-\begin{itemize}
-	\item Machine learning approaches computer program's that have the capability of automatically improve themselves through experience \citep{Michie1994, Levy1997, MacKay2005}.
-	\pause
-	\item Classification techniques uses distances attributes \citep{Michel2016}.
-	\pause
-	\item Euclidean classifier calculates a centroid in the space of attributes.
-	\pause
-	\item Mahalanobis classifier takes into consideration the shape of attributes space.
-	\pause
-	\item A Self Organizing Map (SOM) is inspired by neural cortex \citep{Kohonen1989} and based oriented graph \citep{Haykin1999} working as an interconnected network. 
-	
-\end{itemize}
-
+\begin{columns}
+	\column{0.55\textwidth}
+		\footnotesize
+		\justifying
+		\begin{itemize}
+		\item[Machine learning:] computer program with capability of automatic improvement trought experience.
+		\pause
+		\item[Machine learning groups:]
+		   \begin{enumerate}
+			 {\tiny 
+			 	\item  Artifitial Neural Networks \citep{Minsky1969,Michie1994,MacKay2005};
+			    \item Decision trees \citep{Mitchell1997,Simard2000,Roberts2002};
+			    \item Statistical Classifiers \citep{Michel2016};
+			    \item Self-Organizing Maps \citep{Kohonen1989,Haykin1999};
+			}
+		   \end{enumerate}
+		\pause
+		\item[Classifiers:] uses the concept of distance in the space of attributes;
+		\pause
+		\item[Euclidean classifier:] calculates a centroid in the space of attributes.
+		\pause
+		\item[Mahalanobis classifier:] takes into consideration the shape of attributes space.
+		\pause
+		\item[Self-Organizing Map:] inspired by neural cortex and based oriented graph that works as an interconnected network. 
+	\end{itemize}
+\end{columns}
 \end{frame}
 
 \subsection{Objective}
-
 \begin{frame}
-\frametitle{Objective}
+\frametitle{Objective of this work}
+\begin{columns}\footnotesize 
+	\justifying
+	\column{0.55\textwidth}
 	\begin{itemize}
-		\item Define comparisons between a Kohonen (SOM), an euclidean and a mahalanobean classifiers.
+		\item[Geosphysical problem:] Identify rocks from well log data by means of machine learning and statisticas classifiers;
 		\pause
-		\item Using synthetic well log data in a controlled situation.
+		\item[Way to solve it:] use self-organizing map (SOM) and two statistical classifers;
+		\pause
+		\item[Strategy:] Compare the results for the three explored methods, Kohonen (SOM), euclidean and mahalanobean classifiers for a synthetic scenarium.
 	\end{itemize}
+\end{columns}
 \end{frame}
 
 
 \section{Methodology}
 
 \subsection{Synthetic Sedimentary Basin}
-
-
-
-
-\begin{frame}
-	\frametitle{Methodology}
-	\smartdiagram[priority descriptive diagram]{
-		Generates the hypothesis model,
-	    Uses T1 well data to train the Kohonen (SOM) and make the statistical of classifiers,
-		Uses C1 and C2 to make predictions using SOM and the classifiers,
-		Compare the results					}
-\end{frame}
-
 
 \begin{frame}
 	\frametitle{Synthetic Sedimentary Basin}
@@ -159,7 +164,6 @@
 		\label{Model}
 	\end{figure}
 \end{frame}
-
 
 \begin{frame}
 \frametitle{Synthetic Sedimentary Basin}
@@ -177,10 +181,24 @@
 
 \label{Tab1}
 \end{table}
-
+\begin{columns}
+	\column{0.55\textwidth}
+	\footnotesize
+	\justifying
 \begin{itemize}\footnotesize
-	\item  The sample rate for the well data is $0.01$ observation/meter with contamination of $5$\% Gaussian noise.
+	\item[Sample rate:] $0.01$ observation/meter 
+	\item[Contamination error:] $5$\% Radom Gaussian noise.
 \end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Methodology}
+	\smartdiagram[priority descriptive diagram]{
+		Generates the hypothesis model,
+		Uses T1 well data to train the Kohonen (SOM) and make the statistical of classifiers,
+		Uses C1 and C2 to make predictions using SOM and the classifiers,
+		Compare the results					}
 \end{frame}
 
 \subsection{Training and Similarities}
@@ -226,15 +244,16 @@
 
 \begin{frame}
 	\frametitle{Euclidean Classifier}
-	
+		\begin{tcolorbox}[colback=gray!5,colframe=blue!40!black,title=Definition]
 	\begin{equation}
-	Ed_{i} =  \Arrowvert \textbf{X}-\bar{\textbf{X}}_{i}  \Arrowvert^{\frac{1}{2}}, 
+	Ed_{i} =  \Arrowvert \textbf{X}-\bar{\textbf{X}}_{i}  \Arrowvert_{2} \nonumber
 	\label{eq4}
 	\end{equation}  
+\end{tcolorbox}
 	 \pause
 	\begin{itemize}
 		\centering
-		\item[$\textbf{X}$], input vector 
+		\item[$\textbf{X}$], input vector (attribute data)
 		\pause
 		\item[$\bar{\textbf{X}}_{i}$], mean vector
 	\end{itemize}
@@ -244,33 +263,54 @@
 
 \begin{frame}
   \frametitle{Euclidean Classifier}
-  
     \begin{figure}[H]
-    	
-    	\includegraphics[scale=0.13]{Imagens/clusteranalise1.eps}
+    	\includegraphics[scale=0.1]{Imagens/clusteranalise1.eps}
     \end{figure}
+    
+    \begin{columns}
+    	\column{1\textwidth}
+    	\footnotesize
+    	\justifying
+    \begin{itemize}
+    	\footnotesize
+    	\item All centroid are equidistant
+    	\pause
+    	\item P$(20,5)$ could be a member of all groups from a euclidean point of view 
+    \end{itemize}
+    \end{columns}
   
 \end{frame}
 
 \begin{frame}
 \frametitle{Euclidean Classifier}
-
 \begin{figure}[H]
-	
-	\includegraphics[scale=0.13]{Imagens/clusteranalise3.eps}
+	\includegraphics[scale=0.12]{Imagens/clusteranalise3.eps}
 \end{figure}
 
+    \begin{columns}
+    	\column{1\textwidth}
+    	\footnotesize
+    	\justifying
+\begin{itemize}
+	\item Blue cluster still have the same centroid
+	\pause 
+	\item Problematic to define which cluster point $(20,5)$ should be member of 
+	\pause
+	\item How could we handle this problem?
+\end{itemize}
+\end{columns}
 \end{frame}
 
 \subsubsection{Mahalanobis Classifier}
 
 \begin{frame}
 	\frametitle{Mahalanobis Classifier}
-	
-	\begin{equation}
-	Md_{i}=[(\textbf{X}-\bar{\textbf{X}}_{i})^{T}\textbf{C}_{i}^{-1}(\textbf{X}-\bar{\textbf{X}}_{i})]^{\frac{1}{2}}.
-	\label{eq5}
-	\end{equation}
+	\begin{tcolorbox}[colback=gray!5,colframe=blue!40!black,title=Definition]
+	  \begin{equation}
+			Md_{i}=\Arrowvert(\textbf{X}-\bar{\textbf{X}}_{i})^{T}\textbf{C}_{i}^{-1}(\textbf{X}-\bar{\textbf{X}}_{i})\Arrowvert_{2}\nonumber
+			\label{eq5}
+		\end{equation}
+	\end{tcolorbox}
 	 \pause
 	\begin{itemize}
 		\centering
@@ -283,21 +323,21 @@
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Mahalanobis Classifier}
-
-\begin{equation}
-\textbf{C}_{i}=\frac{1}{n_{i}-1}\sum_{X \in \omega_{i}}(\textbf{X}-\bar{\textbf{X}}_{i})(\textbf{X}-\bar{\textbf{X}}_{i})^{T}
-\label{eq6}
-\end{equation}
-\pause
-\begin{itemize}
-	\centering
-	\item[$n_{i}$], number of elements  
-	\pause
-	\item[$\omega_{i}$], space of attributes
-\end{itemize}
-\end{frame}
+%\begin{frame}
+%\frametitle{Mahalanobis Classifier}
+%
+%\begin{equation}
+%\textbf{C}_{i}=\frac{1}{n_{i}-1}\sum_{X \in \omega_{i}}(\textbf{X}-\bar{\textbf{X}}_{i})(\textbf{X}-\bar{\textbf{X}}_{i})^{T}
+%\label{eq6}
+%\end{equation}
+%\pause
+%\begin{itemize}
+%	\centering
+%	\item[$n_{i}$], number of elements  
+%	\pause
+%	\item[$\omega_{i}$], space of attributes
+%\end{itemize}
+%\end{frame}
 
 \subsubsection{Clusters and Space of Attributes}
 
@@ -337,24 +377,26 @@
 
 \begin{frame}
   \frametitle{Kohonen - SOM}
-  	 \includegraphics[scale=0.5]{Imagens/IntroKoho1.png} 
+  	 \includegraphics[scale=0.5]{Imagens/Introkoho1.png} 
 \end{frame}
 
 
 \begin{frame}
  \frametitle{Kohonen - SOM}
- \includegraphics[scale=0.5]{Imagens/IntroKoho2.png} 
+ \includegraphics[scale=0.5]{Imagens/Introkoho2.png} 
 \end{frame}
 
 
 \begin{frame}
  \frametitle{Kohonen - SOM}
- \includegraphics[scale=0.5]{Imagens/IntroKoho3.png} 
+ \includegraphics[scale=0.5]{Imagens/Introkoho3.png} 
 \end{frame}
 
+
 \begin{frame}
- \frametitle{Kohonen - SOM}
- \includegraphics[scale=0.5]{Imagens/IntroKoho4.png} 
+	\frametitle{Kohonen - SOM}
+	\framesubtitle{Training}
+	\includegraphics[scale=0.5]{Imagens/Introkoho4.png} 
 \end{frame}
 
 \begin{frame}
@@ -376,19 +418,19 @@
 
 \begin{frame}
     \frametitle{Kohonen - SOM}
-    \framesubtitle{Cooperation}
+    \framesubtitle{Cooperation and winner neuron}
 	\begin{eqnarray}
-	i(\textbf{x})= argmin_{j}  \parallel \textbf{x} - \textbf{w}_{j} \parallel \nonumber
+	i(\textbf{x})= argmin_{j}  \parallel \textbf{x} - \textbf{w}_{j} \parallel_{2} \nonumber
 	\end{eqnarray}
-	
-	\begin{eqnarray}
-	d(t)= \sqrt{\sum^{n}_{i=1}[x(t)-w_{i,j}(t)]^{2}} \hspace{1cm}  (j = {1,..,m}), \nonumber
-	\label{eq1}
-	\end{eqnarray}
+%	 or 
+%	\begin{eqnarray}
+%	d(t)= \sqrt{\sum^{n}_{i=1}[x(t)-w_{i,j}(t)]^{2}} \hspace{1cm}  (j = {1,..,m}), \nonumber
+%	\label{eq1}
+%	\end{eqnarray}
 	
 	\begin{itemize}
 		\centering
-		\item[d(t)] distance or identity of a neuron i
+		\item[i(t)] distance or identity of a neuron i
 	\end{itemize}
 
 \end{frame}
@@ -400,31 +442,36 @@
  \framesubtitle{Synaptic adaption or Training process}
 %Neuron changes the value of the surrounding neurons inside a quartet geometry
 %
+
+\begin{tcolorbox}[colback=gray!5,colframe=blue!40!black,title=Definition]
 \begin{equation}
 w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 \label{eq2}
 \end{equation}  
+\end{tcolorbox}
 
 \pause
 
 \begin{itemize}
 	\centering
-	\item[$w_{i,j}(t+1)$],  updated weight matrix 
+	\item[$w_{i,j}(t+1)$],  updated attribute matrix of neurons
 	\item[$\eta(t)$], learning rate
 \end{itemize}
-
+\pause
+\begin{tcolorbox}[colback=gray!5,colframe=blue!40!black,title=Definition]
 \begin{equation}
 \eta(t)=\eta(0)    ( 1 -  \frac{t}{T}  ) \nonumber
 \label{eq3}
 \end{equation}  
+\end{tcolorbox}
 
 \begin{itemize}
 	\centering
 	\item[$T$], number of training cyles
 	\pause
 	\item[$t$], number of iteractions
-	\pause
-	\item A iteractive process $t=t+1$ goes on until $t \approx  T$. Once the process ends for one neuron it repeats it self for the surrounding neighbors \citep{YANG2009,Yan2014}.
+	%\pause
+	%\item A iteractive process $t=t+1$ goes on until $t \approx  T$. Once the process ends for one neuron it repeats it self for the surrounding neighbors \citep{YANG2009,Yan2014}.
 \end{itemize}
 
 %Where $T$ is the number of training cyles and $t$ is the number of iteractions. A iteractive process $t=t+1$ goes on until $t \approx  T$. Once the process ends for one neuron it repeats it self for the surrounding neighbors.
@@ -447,56 +494,83 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 \end{figure}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Winner neuron and neighborhood}
+	
+
+	\begin{figure}
+		\flushright
+		\includegraphics[scale=0.33]{Imagens/hiperplano.png}
+		\label{vencedor1}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Winner neuron and neighborhood}
+	
+	
+	\begin{figure}
+		\flushright
+		\includegraphics[scale=0.33]{Imagens/winner.png}
+		\label{vencedor2}
+	\end{figure}
+\end{frame}
+
+%\begin{frame}
+%	\frametitle{A hyperplane with $400$ neurons}
+%	\begin{table}[H]
+%		\centering
+%		\begin{tabular}{c|c}
+%			
+%			Lithology                   & Normalization \\ % Note a separação de col. e a quebra de linhas
+%			\hline                                                             % para uma linha horizontal
+%			Shale 2              &  1 \\
+%			Dolomite  		     &  2 \\
+%			Diabase    	         &  3 \\
+%			Conglomerate         &  4 \\
+%			Conglomerate 80\%    &  5 \\
+%			Conglomerate 60\%    &  6 \\
+%			Conglomerate 40\%    &  7 \\
+%			Conglomerate 20\%    &  8 \\
+%			Crystalline Basement &  9 \\
+%			% não é preciso quebrar a última linha
+%			
+%		\end{tabular}
+%		\label{codigos}
+%		%\caption{Tabela de referência para conversão do padrão numérico em litologia.}
+%	\end{table}
+%\end{frame}
 
 \begin{frame}
 \frametitle{A hyperplane with $400$ neurons}
+\framesubtitle{Epoch $5$}
 \centering
-\includegraphics[scale=0.47]{Imagens/SOM1_2d.pdf} 
+\includegraphics[scale=0.4]{Imagens/SOM5.pdf} 
 \end{frame}
 
 \begin{frame}
 \frametitle{A hyperplane with $400$ neurons}
+\framesubtitle{Epoch $100$}
 \centering
-\includegraphics[scale=0.47]{Imagens/SOM5_2d.pdf} 
+\includegraphics[scale=0.4]{Imagens/SOM100.pdf} 
 \end{frame}
 
 \begin{frame}
 \frametitle{A hyperplane with $400$ neurons}
+\framesubtitle{Epoch $1000$}
 \centering
-\includegraphics[scale=0.47]{Imagens/SOM100_2d.pdf} 
+\includegraphics[scale=0.4]{Imagens/SOM1000.pdf} 
 \end{frame}
 
-\begin{frame}
-\frametitle{A hyperplane with $400$ neurons}
-\centering
-\includegraphics[scale=0.47]{Imagens/SOM1000_2d.pdf} 
-\end{frame}
+%\begin{frame}
+%\frametitle{A hyperplane with $400$ neurons}
+%\framesubtitle{Convergence}
+%\centering
+%\includegraphics[scale=0.2]{Imagens/conv070917.png} 
+%\end{frame}
 
 
-\begin{frame}
-	\frametitle{A hyperplane with $400$ neurons}
-	\begin{table}[H]
-		\centering
-		\begin{tabular}{c|c}
-			
-			Lithology                   & Normalization \\ % Note a separação de col. e a quebra de linhas
-			\hline                                                             % para uma linha horizontal
-			Shale 2                 &  1\\
-			Dolomite  		            &  2 \\
-			Diabase    	            &  3 \\
-			Conglomerate          &  4 \\
-			Conglomerate 80\% &  5  \\
-			Conglomerate 60\%&  6 \\
-			Conglomerate 40\%&  7\\
-			Conglomerate 20\%&  8 \\
-			Crystalline Basement          &  9 \\
-			% não é preciso quebrar a última linha
-			
-		\end{tabular}
-		\label{codigos}
-		%\caption{Tabela de referência para conversão do padrão numérico em litologia.}
-	\end{table}
-\end{frame}
+
 
 \section{Results}
 
@@ -506,7 +580,7 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[scale=0.35]{Imagens/IDC1020118.eps}
-	%	\caption{Comparison between the classifiers and SOM for C1 well data. }
+		\caption{$700$ data analyzed in each well}
 		\label{C1}
 	\end{figure}
 \end{frame}
@@ -517,7 +591,7 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.35]{Imagens/IDC2020118.eps}
-	%	\caption{Comparison between the classifiers and SOM for C2 well data. }
+        \caption{$700$ data analyzed in each well}
 		\label{C2}
 	\end{figure}
 \end{frame}
@@ -539,6 +613,17 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 	\end{itemize}
 \end{frame}
 
+\section{Future Perspectives}
+
+\begin{frame}
+	\frametitle{Future Perspectives}
+	\begin{itemize}
+		\pause
+		\item Make more tests
+		\pause
+		\item Apply methodology on real data
+	\end{itemize}
+\end{frame}
 
 %\section{References}
 
