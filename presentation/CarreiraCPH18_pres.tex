@@ -141,7 +141,7 @@
 	\justifying
 	\column{0.55\textwidth}
 	\begin{itemize}
-		\item[Geosphysical problem:] Identify rocks from well log data by means of machine learning and statisticas classifiers;
+		\item[Geosphysical problem:] Identify rocks from well log data by means of machine learning and statistical classifiers;
 		\pause
 		\item[Way to solve it:] use self-organizing map (SOM) and two statistical classifers;
 		\pause
@@ -160,7 +160,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.34]{Imagens/Basin.eps}
-		\caption{Synthetic Sedimentary Basin by \cite{Sal2008}  T1, C1 and C2 are training and classifing wells respectively.}
+		\caption{\footnotesize Synthetic Sedimentary Basin by \cite{Sal2008}  T1, C1 and C2 are training and classifing wells respectively.}
 		\label{Model}
 	\end{figure}
 \end{frame}
@@ -294,7 +294,7 @@
 \begin{itemize}
 	\item Blue cluster still have the same centroid
 	\pause 
-	\item Problematic to define which cluster point $(20,5)$ should be member of 
+	\item Problematic to define which cluster point P$(20,5)$ should be member of 
 	\pause
 	\item How could we handle this problem?
 \end{itemize}
@@ -339,37 +339,100 @@
 %\end{itemize}
 %\end{frame}
 
+\begin{frame}
+	\frametitle{Euclidean Classifier}
+	\begin{figure}[H]
+		\includegraphics[scale=0.14]{Imagens/clusteranalise3blue.pdf}
+	\end{figure}
+	
+	\begin{columns}
+		\column{1\textwidth}
+		\footnotesize
+		\justifying
+		\begin{itemize}
+			\item Now, P$(20,5)$ belongs to  \textcolor{blue}{cluster $1$}.
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\begin{huge}
+		\centering
+		Back to the problem ...
+	\end{huge}
+\end{frame}
+
 \subsubsection{Clusters and Space of Attributes}
 
 \begin{frame}
-	\frametitle{Clusters and Space of Attributes - T1 well}
-	    
-	\begin{figure}
-	 %\centering
-	 \includegraphics[scale=0.29]{Imagens/cluterpocoT1.png}
-	\end{figure}
-	
+	\frametitle{Cluster analysis for the syntetic example: T1 well}
+	      \begin{columns}
+	       	\column{0.5\textwidth}
+	       	\footnotesize
+	       	\justifying
+	        \begin{figure}
+	       %\centering
+	       \includegraphics[scale=0.268]{Imagens/cluterpocoT1.png}
+	       \end{figure}
+	       
+	       \column{0.3\textwidth}
+	       \begin{itemize}
+	       	\footnotesize
+	       	\item Scatter plot in pairs ($6$ plots);
+	       	\pause
+	       	\item colors represents the variation rate of physical properties;
+	       	\pause
+	       	\item some elongated clusters;
+	       	\pause
+	       	\item some mixed clusters.
+	       \end{itemize}
+	       
+         \end{columns}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Clusters and Space of Attributes - C1 well}
+\frametitle{Clusters analysis for the example: C1 well}
 
-\begin{figure}
-	%\centering
-	\includegraphics[scale=0.29]{Imagens/cluterpocoC1.png}
-\end{figure}
-
+     \begin{columns}
+    	\column{0.5\textwidth}
+     	\footnotesize
+     	\justifying
+     	\begin{figure}
+    		%\centering
+      		\includegraphics[scale=0.268]{Imagens/cluterpocoC1.png}
+      	\end{figure}
+      	
+      	\column{0.3\textwidth}
+      	\begin{itemize}
+      		\footnotesize
+      		\item Defined clusters;
+      		\pause
+      		\item Different from training well
+    	\end{itemize}
+      	
+      \end{columns}
 \end{frame}
 
 \begin{frame}
-\frametitle{Clusters and Space of Attributes - C2 well}
+\frametitle{Clusters analysis for the example: C2 well}
 
-\begin{figure}
-	%\centering
-	\includegraphics[scale=0.29]{Imagens/cluterpocoC2.png}
-\end{figure}
-
+     \begin{columns}
+     	\column{0.5\textwidth}
+     	\footnotesize
+     	\justifying
+     	\begin{figure}
+     		%\centering
+     		\includegraphics[scale=0.268]{Imagens/cluterpocoC2.png}
+     	\end{figure}
+     	
+     	\column{0.3\textwidth}
+     	\begin{itemize}
+     		\footnotesize
+     		\item Similar to C1 well
+     	\end{itemize}
+     	
+     \end{columns}
 \end{frame}
 
 \subsubsection{Kohonen - SOM}
@@ -377,18 +440,21 @@
 
 \begin{frame}
   \frametitle{Kohonen - SOM}
+  \framesubtitle{Organization}
   	 \includegraphics[scale=0.5]{Imagens/Introkoho1.png} 
 \end{frame}
 
 
 \begin{frame}
- \frametitle{Kohonen - SOM}
+  \frametitle{Kohonen - SOM}
+  \framesubtitle{Organization}
  \includegraphics[scale=0.5]{Imagens/Introkoho2.png} 
 \end{frame}
 
 
 \begin{frame}
  \frametitle{Kohonen - SOM}
+ \framesubtitle{Synaptic adaptation (Training process)}
  \includegraphics[scale=0.5]{Imagens/Introkoho3.png} 
 \end{frame}
 
@@ -407,33 +473,42 @@
 	\textbf{x}=[x_{1}, x_{2}, x_{3}, ..., x_{m}]^{T} \nonumber
 	\end{eqnarray}
 	\pause
+	\begin{itemize}
+		\centering
+		\item[x], input data 
+		\pause
+	\end{itemize}
 	\begin{eqnarray}
-	\textbf{w}_{j}= [w_{j1}, w_{j2}, w_{j3}, ..., w_{jm}]^{T} \nonumber
+	\textbf{w}_{i,j}= [w_{j1}, w_{j2}, w_{j3}, ..., w_{jm}]^{T} \nonumber
 	\end{eqnarray}
 	\pause
+	\begin{itemize}
+		\centering
+		\item[w], neuron atribute matrix 
+	\end{itemize}
 	\begin{eqnarray}
 	j=1,2,3,\hdots,l \nonumber
 	\end{eqnarray}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Kohonen - SOM}
-    \framesubtitle{Cooperation and winner neuron}
-	\begin{eqnarray}
-	i(\textbf{x})= argmin_{j}  \parallel \textbf{x} - \textbf{w}_{j} \parallel_{2} \nonumber
-	\end{eqnarray}
-%	 or 
+%\begin{frame}
+%    \frametitle{Kohonen - SOM}
+%    \framesubtitle{Cooperation and winner neuron}
 %	\begin{eqnarray}
-%	d(t)= \sqrt{\sum^{n}_{i=1}[x(t)-w_{i,j}(t)]^{2}} \hspace{1cm}  (j = {1,..,m}), \nonumber
-%	\label{eq1}
+%	i(\textbf{x})= argmin_{j}  \parallel \textbf{x} - \textbf{w}_{i,j} \parallel_{2} \nonumber
 %	\end{eqnarray}
-	
-	\begin{itemize}
-		\centering
-		\item[i(t)] distance or identity of a neuron i
-	\end{itemize}
-
-\end{frame}
+%%	 or 
+%%	\begin{eqnarray}
+%%	d(t)= \sqrt{\sum^{n}_{i=1}[x(t)-w_{i,j}(t)]^{2}} \hspace{1cm}  (j = {1,..,m}), \nonumber
+%%	\label{eq1}
+%%	\end{eqnarray}
+%	
+%	\begin{itemize}
+%		\centering
+%		\item[i(x)], distance or identity of a neuron i
+%	\end{itemize}
+%
+%\end{frame}
 
 
 
@@ -454,7 +529,7 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 
 \begin{itemize}
 	\centering
-	\item[$w_{i,j}(t+1)$],  updated attribute matrix of neurons
+	\item[$w_{i,j}(t+1)$],  updated neuron attribute matrix
 	\item[$\eta(t)$], learning rate
 \end{itemize}
 \pause
@@ -468,7 +543,7 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 \begin{itemize}
 	\centering
 	\item[$T$], number of training cyles
-	\pause
+%	\pause
 	\item[$t$], number of iteractions
 	%\pause
 	%\item A iteractive process $t=t+1$ goes on until $t \approx  T$. Once the process ends for one neuron it repeats it self for the surrounding neighbors \citep{YANG2009,Yan2014}.
@@ -482,24 +557,37 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 \begin{frame}
 \frametitle{The geometry}
 
+\begin{columns}
+\column{0.2\textwidth}
 \begin{figure}[H]
 \flushleft
 \includegraphics[scale=0.2]{Imagens/toro.png}
 \label{toro}
 \end{figure}
+\column{0.5\textwidth}
 \begin{figure}
 \flushright
-\includegraphics[scale=0.33]{Imagens/hiperplano.png}
+\includegraphics[scale=0.3]{Imagens/hiperplano.png}
 \label{hiperplano}
 \end{figure}
+\end{columns}
+\pause
+\begin{itemize}
+	\footnotesize
+	\centering
+	\item[Toroid], efficient way to connect all cells
+	\item[Hyperplane], all attribute data goes here
+\end{itemize}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Winner neuron and neighborhood}
-	
 
+\begin{frame}
+	\frametitle{Winner neuron and neighborhood}	
+	\begin{eqnarray}
+	i(\textbf{x})= argmin_{j}  \parallel \textbf{x} - \textbf{w}_{i,j} \parallel_{2} \nonumber
+	\end{eqnarray}
 	\begin{figure}
-		\flushright
+		\centering
 		\includegraphics[scale=0.33]{Imagens/hiperplano.png}
 		\label{vencedor1}
 	\end{figure}
@@ -507,10 +595,11 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 
 \begin{frame}
 	\frametitle{Winner neuron and neighborhood}
-	
-	
+	\begin{eqnarray}
+	i(\textbf{x})= argmin_{j}  \parallel \textbf{x} - \textbf{w}_{i,j} \parallel_{2} \nonumber
+	\end{eqnarray}
 	\begin{figure}
-		\flushright
+		\centering
 		\includegraphics[scale=0.33]{Imagens/winner.png}
 		\label{vencedor2}
 	\end{figure}
@@ -542,31 +631,51 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 %\end{frame}
 
 \begin{frame}
-\frametitle{A hyperplane with $400$ neurons}
+\frametitle{Training process for the synthetic case}
 \framesubtitle{Epoch $5$}
 \centering
-\includegraphics[scale=0.4]{Imagens/SOM5.pdf} 
+\includegraphics[scale=0.3]{Imagens/SOM5.pdf} 
+\pause
+\begin{itemize}
+	\footnotesize
+	%\centering
+	\item $400$ neurons comprising the hyperplane
+	\pause
+	\item Epoch = iteraction in the training process
+\end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{A hyperplane with $400$ neurons}
-\framesubtitle{Epoch $100$}
+\frametitle{Training process for the synthetic case}
+\framesubtitle{Epoch $500$}
 \centering
-\includegraphics[scale=0.4]{Imagens/SOM100.pdf} 
+\includegraphics[scale=0.3]{Imagens/SOM100.pdf} 
+\pause
+\begin{itemize}
+	\footnotesize
+	%\centering
+	\item Shale is the predominant rock in this stage
+\end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{A hyperplane with $400$ neurons}
+\frametitle{Training process for the synthetic case}
 \framesubtitle{Epoch $1000$}
 \centering
-\includegraphics[scale=0.4]{Imagens/SOM1000.pdf} 
+\includegraphics[scale=0.3]{Imagens/SOM1000.pdf} 
+\pause
+\begin{itemize}
+	\footnotesize
+	%\centering
+	\item Final stage.
+\end{itemize}
 \end{frame}
 
 %\begin{frame}
-%\frametitle{A hyperplane with $400$ neurons}
+%\frametitle{Training process for the synthetic case}
 %\framesubtitle{Convergence}
-%\centering
-%\includegraphics[scale=0.2]{Imagens/conv070917.png} 
+%%\centering
+%\includegraphics[scale=0.2]{Imagens/convEAGE18.png} 
 %\end{frame}
 
 
@@ -580,9 +689,13 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 	\begin{figure}[H]
 		\centering
 		 \includegraphics[scale=0.35]{Imagens/IDC1020118.eps}
-		\caption{$700$ data analyzed in each well}
+		\caption{$700$ data measured in each well}
 		\label{C1}
 	\end{figure}
+	\pause
+\begin{eqnarray}
+	Error=Lithology(z)-classification(z) \nonumber
+\end{eqnarray}
 \end{frame}
 
 \begin{frame}
@@ -591,9 +704,32 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.35]{Imagens/IDC2020118.eps}
-        \caption{$700$ data analyzed in each well}
+        \caption{$700$ data measured in each well}
 		\label{C2}
 	\end{figure}
+		\pause
+		\begin{eqnarray}
+		Error=Lithology(z)-classification(z) \nonumber
+		\end{eqnarray}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Results}
+	\framesubtitle{Comparative table}
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{||c|c|c|c||}
+				\hline
+Well &  SOM($\%$) & Euclidean($\%$) & Mahalanobis($\%$)\\ [0.5ex] \hline\hline 
+C$1$	  &  1.57      &     6           &    11.28   \\
+\hline
+C$2$     &  0.71      &    1.71         &    18.28    \\ [1ex] 
+\hline
+				% não é preciso quebrar a última linha
+			\end{tabular}
+			\label{codigos}
+			%\caption{Tabela de referência para conversão do padrão numérico em litologia.}
+            \end{table}
 \end{frame}
 
 \section{Conclusions}
@@ -601,15 +737,15 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 \begin{frame}
 	\frametitle{Conclusions}
 	\begin{itemize}
-		\item SOM algorithm overperformed the euclidean and mahalanobis classifiers with an error of $0.71\%$
+	%	\item SOM algorithm overperformed the euclidean and mahalanobis classifiers with an error of $0.71\%$
+	%	\pause
+		\item The complex distribution of features in the space of properties led to errors of $18.28\%$ (mahalanobis) and $1.71\%$ (euclidean) in the best scenario (C$2$ well).
 		\pause
-		\item The complex distribution of features on the space of properties led to an increase of errors on classifiers of $18.28\%$ (mahalanobis) and $1.74\%$ (euclidean)
+		\item Classifiers could not perform classification of bell patterns in well data. 
 		\pause
-		\item Classifiers can not perform classification of bell patterns in well data. 
+		\item Box patterns could be solved by euclidean classifier but not by mahalanobis
 		\pause
-		\item Box patterns could be solved with euclidean classifier but not in mahalanobis
-		\pause
-		\item Kohonen - SOM showed the bests results concerning classification of mixture of rocks or the bell pattern
+		\item Kohonen SOM showed better performance concerning classification of mixture of rocks or the bell pattern
 	\end{itemize}
 \end{frame}
 
@@ -619,9 +755,11 @@ w_{i,j}(t+1)=w_{i,j}(t)+\eta(t)[x(t)-w_{i,j}(t)] \nonumber
 	\frametitle{Future Perspectives}
 	\begin{itemize}
 		\pause
-		\item Make more tests
+		\item Make more tests with more training wells to verify why such a poor performance of Mahalanobis Classifier;
 		\pause
-		\item Apply methodology on real data
+		\item Create a more promising stop criterion for the training process (in development);
+		\pause
+		\item Real data application (Paraná Sedimentary Basin, Southeast Brazil)
 	\end{itemize}
 \end{frame}
 
