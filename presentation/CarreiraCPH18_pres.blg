@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: CarreiraCPH18_pres.aux
+The style file: apalike.bst
+Database file #1: references.bib
+I was expecting a `,' or a `}'---line 4279 of file references.bib
+ :  
+ :  year = {2005}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty journal in Kohonen1989
+Warning--empty publisher in MacKay2005
+Warning--can't use both author and editor fields in Michel2016
+Warning--empty publisher in Michel2016
+Warning--can't use both author and editor fields in Minsky1969
+Warning--empty publisher in Minsky1969
+You've used 10 entries,
+            1935 wiz_defined-function locations,
+            546 strings with 5164 characters,
+and the built_in function-call counts, 3519 in all, are:
+= -- 328
+> -- 151
+< -- 7
++ -- 50
+- -- 50
+* -- 306
+:= -- 637
+add.period$ -- 28
+call.type$ -- 10
+change.case$ -- 74
+chr.to.int$ -- 10
+cite$ -- 16
+duplicate$ -- 135
+empty$ -- 239
+format.name$ -- 64
+if$ -- 665
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 14
+newline$ -- 51
+num.names$ -- 30
+pop$ -- 71
+preamble$ -- 1
+purify$ -- 75
+quote$ -- 0
+skip$ -- 102
+stack$ -- 0
+substring$ -- 185
+swap$ -- 11
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 50
+warning$ -- 6
+while$ -- 25
+width$ -- 0
+write$ -- 126
+(There was 1 error message)

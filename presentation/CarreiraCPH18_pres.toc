@@ -1,0 +1,15 @@
+\beamer@endinputifotherversion {3.24pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Motivation}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Objective}{10}{0}{1}
+\beamer@sectionintoc {2}{Methodology}{13}{0}{2}
+\beamer@subsectionintoc {2}{1}{Synthetic Sedimentary Basin}{13}{0}{2}
+\beamer@subsectionintoc {2}{2}{Training and Similarities}{16}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{1}{Euclidean Classifier}{20}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{2}{Mahalanobis Classifier}{28}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{3}{Clusters and Space of Attributes}{34}{0}{2}
+\beamer@subsubsectionintoc {2}{2}{4}{Kohonen - SOM}{41}{0}{2}
+\beamer@sectionintoc {3}{Results}{63}{0}{3}
+\beamer@sectionintoc {4}{Conclusions}{68}{0}{4}
+\beamer@sectionintoc {5}{Future Perspectives}{72}{0}{5}

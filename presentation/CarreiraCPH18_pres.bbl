@@ -1,0 +1,56 @@
+\begin{thebibliography}{}
+
+\bibitem[Haykin, 1999]{Haykin1999}
+Haykin, S. (1999).
+\newblock {\em Neural Networks: a comprehensive foundation}.
+\newblock Prentice Hall Inc., Porto Alegre, 2 edition.
+
+\bibitem[Kohonen, 1989]{Kohonen1989}
+Kohonen, T. (1989).
+\newblock {Biological Cybernetics 9 1989}.
+\newblock 425:139--145.
+
+\bibitem[MacKay, 2005]{MacKay2005}
+MacKay, D. J.~C. (2005).
+\newblock {\em {Information Theory, Inference, and Learning Algorithms David
+  J.C. MacKay}}, volume 100.
+
+\bibitem[Michel and Deza, 2016]{Michel2016}
+Michel, M.~D. and Deza, E. (2016).
+\newblock {\em Encyclopedia of Distances}.
+\newblock 4 edition.
+
+\bibitem[Michie et~al., 1994]{Michie1994}
+Michie, E.~D., Spiegelhalter, D.~J., and Taylor, C.~C. (1994).
+\newblock {Machine Learning , Neural and Statistical Classification}.
+\newblock {\em Technometrics}, 37(4):459.
+
+\bibitem[Minsky and Papert, 1969]{Minsky1969}
+Minsky, M. and Papert, S. (1969).
+\newblock {\em Perceptrons}.
+\newblock 2 edition.
+
+\bibitem[Mitchell, 1997]{Mitchell1997}
+Mitchell, T.~M. (1997).
+\newblock {Decision Tree Learning}.
+
+\bibitem[Mohriak et~al., 2008]{Sal2008}
+Mohriak, W., Szatmari, P., and Anjos, S. (2008).
+\newblock {\em Sal: Geologia e Tect{\^o}nica. Exemplos nas Bacias Brasileiras}.
+\newblock Beca, S{\~a}o Paulo, SP., 1 edition.
+
+\bibitem[Roberts et~al., 2002]{Roberts2002}
+Roberts, D.~A., Numata, I., Holmes, K., Batista, G., Krug, T., Monteiro, A.,
+  Powell, B., and Chadwick, O.~A. (2002).
+\newblock {Large area mapping of land-cover change in Rond??nia using
+  multitemporal spectral mixture analysis and decision tree classifiers}.
+\newblock {\em Journal of Geophysical Research D: Atmospheres}, 107(20).
+
+\bibitem[Simard et~al., 2000]{Simard2000}
+Simard, M., Saatchi, S.~S., and {De Grandi}, G. (2000).
+\newblock {The use of decision tree and multiscale texture for classification
+  of JERS-1 SAR data over tropical forest}.
+\newblock {\em IEEE Transactions on Geoscience and Remote Sensing}, 38(5
+  I):2310--2321.
+
+\end{thebibliography}
